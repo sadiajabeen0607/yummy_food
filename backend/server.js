@@ -9,7 +9,6 @@ import orderRouter from "./routes/orderRoute.js";
 
 // app config
 const app = express();
-const PORT = process.env.PORT || 4000;
 
 // use middleware
 app.use(express.json());
@@ -27,8 +26,7 @@ app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
     res.send("API Working");
-})
+});
 
-app.listen(PORT, () => {
-    console.log(`Server Started on http://localhost:${PORT}`)
-})
+// Export the Express app for Vercel
+export default app;
